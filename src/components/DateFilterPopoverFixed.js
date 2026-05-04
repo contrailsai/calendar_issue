@@ -4,11 +4,11 @@ import { useState, useEffect, useMemo } from 'react';
 import { format, endOfDay } from 'date-fns';
 import { CalendarIcon, Clock2Icon, ChevronDown } from 'lucide-react';
 
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
-import { Calendar } from '@/components/ui/calendar';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from './ui/card';
+import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
+import { Field, FieldGroup, FieldLabel } from "./ui/field";
+import { Calendar } from './ui/calendar';
+import { Button } from './ui/button';
 import { cn } from "@/lib/utils";
 
 // Generate ["00:00", "00:30", "01:00" ... "23:30"]
@@ -65,7 +65,7 @@ function CustomTimePicker({ date, onChange, disabled }) {
                             variant="ghost"
                             className={cn(
                                 "justify-center font-normal px-2 py-1 h-8 shrink-0",
-                                time24 === t && "bg-blue-600 text-white hover:bg-blue-700 hover:text-white"
+                                time24 === t && "bg-slate-600 text-white hover:bg-slate-700 hover:text-white"
                             )}
                             onClick={() => updateDate(t)}
                         >
@@ -181,11 +181,11 @@ export function DateFilterPopoverFixed({ title, onApply, initialFrom, initialTo 
                     <CalendarIcon className="h-3.5 w-3.5 mr-2 shrink-0 text-slate-400" />
                     {appliedRange?.from ? (
                         appliedRange.to ? (
-                            <span className="truncate text-slate-900">
+                            <span className="truncate text-slate-500">
                                 {format(appliedRange.from, "LLL dd")} - {format(appliedRange.to, "LLL dd")}
                             </span>
                         ) : (
-                            <span className="truncate text-slate-900">{format(appliedRange.from, "LLL dd, y")}</span>
+                            <span className="truncate text-slate-500">{format(appliedRange.from, "LLL dd, y")}</span>
                         )
                     ) : (
                         <span className="text-slate-500 truncate">{title}</span>
@@ -203,7 +203,7 @@ export function DateFilterPopoverFixed({ title, onApply, initialFrom, initialTo 
                         <div className="w-full text-xs">
                             <span className="text-slate-500">Filter by</span>
                             <br />
-                            <span className='font-semibold text-lg text-slate-900'>
+                            <span className='font-semibold text-lg text-slate-500'>
                                 {title}
                             </span>
                         </div>
@@ -211,13 +211,13 @@ export function DateFilterPopoverFixed({ title, onApply, initialFrom, initialTo 
                             <div className="flex flex-col gap-1 text-[11px]">
                                 <div className="flex justify-between items-center gap-4">
                                     <span className="font-medium text-slate-400 uppercase tracking-wider">From:</span>
-                                    <span className="text-slate-900 font-bold">
+                                    <span className="text-slate-500 font-bold">
                                         {dateRange?.from ? format(dateRange.from, "do MMM yyyy - HH:mm") : "—"}
                                     </span>
                                 </div>
                                 <div className="flex justify-between items-center gap-4">
                                     <span className="font-medium text-slate-400 uppercase tracking-wider">To:</span>
-                                    <span className="text-slate-900 font-bold">
+                                    <span className="text-slate-500 font-bold">
                                         {dateRange?.to ? format(dateRange.to, "do MMM yyyy - HH:mm") : "—"}
                                     </span>
                                 </div>
@@ -262,13 +262,13 @@ export function DateFilterPopoverFixed({ title, onApply, initialFrom, initialTo 
                             <div className="flex flex-col items-center gap-2 mt-auto pt-4">
                                 <Button
                                     variant="ghost"
-                                    className="w-full text-xs h-8 text-slate-500 hover:text-slate-900"
+                                    className="w-full text-xs h-8 text-slate-500 hover:text-slate-500"
                                     onClick={handleClear}
                                 >
                                     Clear
                                 </Button>
                                 <Button
-                                    className="w-full text-sm h-9 bg-blue-600 hover:bg-blue-700 text-white"
+                                    className="w-full text-sm h-9 bg-slate-600 hover:bg-slate-700 text-white"
                                     onClick={handleApply}
                                 >
                                     Apply Filter

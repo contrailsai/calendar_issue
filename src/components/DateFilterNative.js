@@ -83,11 +83,11 @@ export function DateFilterNative({ title, onApply, initialFrom, initialTo }) {
                 <CalendarIcon className="mr-2 h-3.5 w-3.5 shrink-0 text-slate-400" />
                 {appliedRange?.from ? (
                     appliedRange.to ? (
-                        <span className="truncate text-slate-900">
+                        <span className="truncate text-slate-500">
                             {format(appliedRange.from, "LLL dd")} - {format(appliedRange.to, "LLL dd")}
                         </span>
                     ) : (
-                        <span className="truncate text-slate-900">{format(appliedRange.from, "LLL dd, y")}</span>
+                        <span className="truncate text-slate-500">{format(appliedRange.from, "LLL dd, y")}</span>
                     )
                 ) : (
                     <span className="truncate text-slate-500">{title}</span>
@@ -97,7 +97,7 @@ export function DateFilterNative({ title, onApply, initialFrom, initialTo }) {
             {open && (
                 <div className="absolute left-0 top-full z-50 mt-2 w-[calc(100vw-2rem)] max-w-[400px] rounded-xl border border-slate-200 bg-white p-4 shadow-lg sm:w-auto">
                     <div className="mb-4">
-                        <span className="text-lg font-semibold text-slate-900">{title}</span>
+                        <span className="text-lg font-semibold text-slate-500">{title}</span>
                     </div>
 
                     <div className="flex flex-col gap-4">

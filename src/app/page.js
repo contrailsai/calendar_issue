@@ -24,8 +24,8 @@ export default function Home() {
         </div>
 
         {/* Variation 1.5: FIXED Radix + React Day Picker */}
-        <div className="w-full bg-white p-6 rounded-xl border border-blue-200 shadow-sm flex flex-col gap-2 relative z-40">
-          <h2 className="text-sm font-bold text-blue-500 uppercase tracking-wider">1.5 FIXED (potentially)</h2>
+        <div className="w-full bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col gap-2 relative z-40">
+          <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wider">1.5 FIXED (potentially)</h2>
           <p className="text-xs text-slate-500 mb-2">Uses useMemo + endOfDay for disabled prop, and handles activeModifiers.</p>
           <DateFilterPopoverFixed 
             title="Select Date Range" 

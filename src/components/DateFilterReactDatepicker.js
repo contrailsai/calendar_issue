@@ -71,7 +71,7 @@ function CustomTimePicker({ date, onChange, disabled }) {
                             type="button"
                             className={cn(
                                 "flex h-8 shrink-0 items-center justify-center rounded-sm px-2 py-1 text-sm font-normal hover:bg-slate-100",
-                                time24 === t && "bg-blue-600 text-white hover:bg-blue-700"
+                                time24 === t && "bg-slate-600 text-white hover:bg-slate-700"
                             )}
                             onClick={() => updateDate(t)}
                         >
@@ -175,11 +175,11 @@ export function DateFilterReactDatepicker({ title, onApply, initialFrom, initial
                 <CalendarIcon className="mr-2 h-3.5 w-3.5 shrink-0 text-slate-400" />
                 {appliedRange?.from ? (
                     appliedRange.to ? (
-                        <span className="truncate text-slate-900">
+                        <span className="truncate text-slate-500">
                             {format(appliedRange.from, "LLL dd")} - {format(appliedRange.to, "LLL dd")}
                         </span>
                     ) : (
-                        <span className="truncate text-slate-900">{format(appliedRange.from, "LLL dd, y")}</span>
+                        <span className="truncate text-slate-500">{format(appliedRange.from, "LLL dd, y")}</span>
                     )
                 ) : (
                     <span className="truncate text-slate-500">{title}</span>
@@ -192,19 +192,19 @@ export function DateFilterReactDatepicker({ title, onApply, initialFrom, initial
                         <div className="w-full text-xs">
                             <span className="text-slate-500">Filter by</span>
                             <br />
-                            <span className="text-lg font-semibold text-slate-900">{title}</span>
+                            <span className="text-lg font-semibold text-slate-500">{title}</span>
                         </div>
                         <div className="mt-2 flex w-full items-center justify-start sm:mt-0 sm:justify-end">
                             <div className="flex flex-col gap-1 text-[11px]">
                                 <div className="flex items-center justify-between gap-4">
                                     <span className="font-medium uppercase tracking-wider text-slate-400">From:</span>
-                                    <span className="font-bold text-slate-900">
+                                    <span className="font-bold text-slate-500">
                                         {dateRange?.from ? format(dateRange.from, "do MMM yyyy - HH:mm") : "—"}
                                     </span>
                                 </div>
                                 <div className="flex items-center justify-between gap-4">
                                     <span className="font-medium uppercase tracking-wider text-slate-400">To:</span>
-                                    <span className="font-bold text-slate-900">
+                                    <span className="font-bold text-slate-500">
                                         {dateRange?.to ? format(dateRange.to, "do MMM yyyy - HH:mm") : "—"}
                                     </span>
                                 </div>
@@ -246,7 +246,7 @@ export function DateFilterReactDatepicker({ title, onApply, initialFrom, initial
                             <div className="mt-auto flex flex-col items-center gap-2 pt-4">
                                 <button
                                     onClick={handleClear}
-                                    className="flex h-8 w-full items-center justify-center rounded-md text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition-colors"
+                                    className="flex h-8 w-full items-center justify-center rounded-md text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-500 transition-colors"
                                 >
                                     Clear
                                 </button>
